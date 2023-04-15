@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>信息咨询</title>
+    <style>
+        body {
+            background: url(en3.jpg) no-repeat center center;
+            background-size: cover;
+            /* 让背景图基于容器大小伸缩 */
+            background-attachment: fixed;
+            /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 此条属性必须设置否则可能无效*/
+            background-color: #CCCCCC;
+            /* 设置背景颜色，背景图加载过程中会显示背景色 */
+        }
+        .ribbon {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            right: 300px;
+            top: 50px;
+            margin: auto;
+        }
+
+        .ribbon:after,
+        .ribbon:before {
+            margin-top: 0.5em;
+            content: "";
+            display: flex;
+        ;
+            border: 1.5em solid #fff;
+        }
+
+        .ribbon:after {
+            border-right-color: transparent;
+        }
+
+        .ribbon:before {
+            border-left-color: transparent;
+        }
+
+        .ribbon a:link,
+        .ribbon a:visited {
+            color: #000;
+            text-decoration: none;
+            height: 3.5em;
+            overflow: hidden;
+        }
+
+        .ribbon span {
+            background: #fff;
+            display: inline-block;
+            line-height: 3em;
+            padding: 0 1.5em;
+            margin-top: 0.5em;
+            position: relative;
+            -webkit-transition: background-color 0.2s, margin-top 0.2s;
+            /* Saf3.2+, Chrome */
+            -moz-transition: background-color 0.2s, margin-top 0.2s;
+            /* FF4+ */
+            -ms-transition: background-color 0.2s, margin-top 0.2s;
+            /* IE10 */
+            -o-transition: background-color 0.2s, margin-top 0.2s;
+            /* Opera 10.5+ */
+            transition: background-color 0.2s, margin-top 0.2s;
+        }
+
+        .ribbon a:hover span {
+            background: #FFD204;
+            margin-top: 0;
+        }
+
+        .ribbon span:before {
+            content: "";
+            position: absolute;
+            top: 3em;
+            left: 0;
+            border-right: 0.5em solid #9B8651;
+            border-bottom: 0.5em solid #fff;
+        }
+
+        .ribbon span:after {
+            content: "";
+            position: absolute;
+            top: 3em;
+            right: 0;
+            border-left: 0.5em solid #9B8651;
+            border-bottom: 0.5em solid #fff;
+        }
+
+
+        #left {
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;;
+            color: #f4f7f7;
+            height: 800px;
+            width: 550px;
+            float: left;
+            margin-top: 25px;
+        }
+
+        #words {
+            color: bisque;
+            font-family: NSimSun;
+            /*font-family: FZShouJinShu-S10S;*/
+        }
+
+        #right {
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;;
+            height: 800px;
+            width: 950px;
+            float: right;
+            margin-top: 25px;
+        }
+
+        footer {
+            background-color: #1f4e5f;
+            color: #f4f7f7;
+            clear: both;
+            text-align: center;
+        }
+
+        #picture1 {
+            float: left;
+            height: 400px;
+            width: 950px;
+        }
+        pictue {
+            height: 390px;
+            width: 945px;
+            float: right;
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+        }
+
+        #picture {
+            height: 390px;
+            width: 945px;
+            float: right;
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+        }
+
+        #msg {
+            float: right;
+            color: white;
+            /*font-family: NSimSun;*/
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+            text-align: center;
+            width: 370px;
+            height: 397px;
+            padding-top: 5px;
+        }
+
+        img {
+            float: left;
+            width: 510px;
+            height: 320px;
+            margin-top: 50px;
+        }
+
+        nav {
+            display: block;
+            padding: 10px 10px;
+            padding-top: 0;
+            margin-left: 300px;
+        }
+
+
+
+
+
+
+        .bn{
+            width:50px;
+            height:40px;
+            background:#79a8a9 no-repeat;
+            border:0;
+            display:block;
+            font-size:18px;
+            color:#FFF;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight:bolder;
+        }
+        .ur{
+            height:300px;
+            border:0;
+            color:white;
+            width:236px;
+            margin:4px 28px;
+            background:#79a8a9;
+            padding-left:10px;
+            font-size:16pt;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .ul{
+            height:30px;
+            border:0;
+            color:wheat;
+
+            width:236px;
+            margin:4px 28px;
+            background:#79a8a9;
+            padding-left:10px;
+            font-size:16pt;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<script>
+    function t() {
+        if (document.ttt.text.value == "" || document.ttt.text.value == null) {
+            window.alert("信息不能为空")
+            return false;
+        }
+    }
+</script>
+<body>
+<div id="words">
+    <h1 style="size: 30px">学校信息管理</h1>
+    <div class='ribbon'>
+        <a href="home.html"><span>首页</span></a>
+        <a href="message.html"><span>信息咨询</span></a>
+        <a href="management.html"><span>账号管理</span></a>
+        <a href="control.html"><span>班级管理</span></a>
+        <a href="information.html"><span>网站信息</span></a>
+
+
+    </div>
+<div id="left">
+    <br>
+    <br><br>
+
+    <a href="msg.html" style="color: white;text-decoration: white">在党的百年华诞来临之际，6月30日，学校在成电会堂隆重举行“两优一先”表彰大会。</a><br><br>
+    <a href="msg.html"style="color: white;text-decoration: white">学校党委理论学习中心组举行党史学习教育专题读书班</a><br><br>
+    <a href="msg.html"style="color: white;text-decoration: white">《光明日报》整版报道我校党史学习教育<br></a><br><br>
+    <a href="msg.html"style="color: white;text-decoration: white">【党史学习教育】电子学院：以“三个聚焦”为载体开展红色专项社会实践活动<br></a><br><br>
+    <a href="msg.html"style="color: white;text-decoration: white">学校首期青年教师骨干教学能力提升研修班顺利结业<br></a><br><br>
+
+
+</div>
+<div id="right">
+
+    <div id="picture1">
+        <img src="en8.jpg" />
+        <form id="ttt" name="ttt" action="#" method="POST" >
+        <div id="msg">
+            <input name="title" type="text"  placeholder="标题" class="ul" />
+<textarea  id="text" name="text" rows="10" cols="10" placeholder="输入信息"class="ur" > </textarea>
+
+            <input type="submit" value="提交" class="bn" onclick="return t()" /></div></form>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</body>
+</html>

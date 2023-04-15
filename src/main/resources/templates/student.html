@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>查询账号信息</title>
+  <style>
+    body {
+      background: url(en3.jpg) no-repeat center center;
+      background-size: cover;
+      /* 让背景图基于容器大小伸缩 */
+      background-attachment: fixed;
+      /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 此条属性必须设置否则可能无效*/
+      background-color: #CCCCCC;
+      /* 设置背景颜色，背景图加载过程中会显示背景色 */
+    }
+    .ribbon {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      right: 300px;
+      top: 50px;
+      margin: auto;
+    }
+
+    .ribbon:after,
+    .ribbon:before {
+      margin-top: 0.5em;
+      content: "";
+      display: flex;
+    ;
+      border: 1.5em solid #fff;
+    }
+
+    .ribbon:after {
+      border-right-color: transparent;
+    }
+
+    .ribbon:before {
+      border-left-color: transparent;
+    }
+
+    .ribbon a:link,
+    .ribbon a:visited {
+      color: #000;
+      text-decoration: none;
+      height: 3.5em;
+      overflow: hidden;
+    }
+
+    .ribbon span {
+      background: #fff;
+      display: inline-block;
+      line-height: 3em;
+      padding: 0 1.5em;
+      margin-top: 0.5em;
+      position: relative;
+      -webkit-transition: background-color 0.2s, margin-top 0.2s;
+      /* Saf3.2+, Chrome */
+      -moz-transition: background-color 0.2s, margin-top 0.2s;
+      /* FF4+ */
+      -ms-transition: background-color 0.2s, margin-top 0.2s;
+      /* IE10 */
+      -o-transition: background-color 0.2s, margin-top 0.2s;
+      /* Opera 10.5+ */
+      transition: background-color 0.2s, margin-top 0.2s;
+    }
+
+    .ribbon a:hover span {
+      background: #FFD204;
+      margin-top: 0;
+    }
+
+    .ribbon span:before {
+      content: "";
+      position: absolute;
+      top: 3em;
+      left: 0;
+      border-right: 0.5em solid #9B8651;
+      border-bottom: 0.5em solid #fff;
+    }
+
+    .ribbon span:after {
+      content: "";
+      position: absolute;
+      top: 3em;
+      right: 0;
+      border-left: 0.5em solid #9B8651;
+      border-bottom: 0.5em solid #fff;
+    }
+    div.dialog-bz {
+      width: 550px;
+      height: 300px;
+      margin: auto;
+      margin-top: 200px;
+      background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+      padding: 50px 50px 30px;
+      box-shadow: 10px 10px 15px black;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    #left {
+      background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+      color: #f4f7f7;
+      height: 800px;
+      width: 550px;
+      float: left;
+      margin-top: 25px;
+    }
+
+    #words {
+      color: bisque;
+      font-family: NSimSun;
+      /*font-family: FZShouJinShu-S10S;*/
+    }
+
+    #right {
+      background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+      height: 800px;
+      width: 950px;
+      float: right;
+      margin-top: 25px;
+    }
+
+    footer {
+      background-color: #1f4e5f;
+      color: #f4f7f7;
+      clear: both;
+      text-align: center;
+    }
+
+    #picture1 {
+      float: left;
+      height: 400px;
+      width: 950px;
+    }
+    pictue {
+      height: 390px;
+      width: 945px;
+      float: right;
+      background-color: #58C9B9;
+    }
+
+    #picture {
+      height: 390px;
+      width: 945px;
+      float: right;
+      background-color: #58C9B9;
+    }
+
+    #msg {
+      float: right;
+      color: white;
+      /*font-family: NSimSun;*/
+      background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+      text-align: center;
+      width: 370px;
+      height: 397px;
+      padding-top: 5px;
+    }
+
+    img {
+      float: left;
+      width: 510px;
+      height: 320px;
+      margin-top: 50px;
+    }
+
+    nav {
+      display: block;
+      padding: 10px 10px;
+      padding-top: 0;
+      margin-left: 300px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+
+
+    li {
+      float: left;
+    }
+    h2 {
+      font-family: Courier New;
+    }
+
+    #start {
+      width: 40px;
+      height: 40px;
+    }
+
+
+    .lg_top{ height:0px; width:300px;}
+    .lg_main{width:400px; height:300px; margin:0 0px;}
+    .lg_m_1{
+      width:290px;
+      height:0px;
+      padding:0px 0px 0px 55px;
+    }
+    .ur{
+      height:37px;
+      border:0;
+      color:black;
+      width:236px;
+      margin:4px 28px;
+      background:white;
+      padding-left:10px;
+      font-size:16pt;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    .pw{
+      height:37px;
+      border:0;
+      color:black;
+      width:236px;
+      margin:4px 28px;
+      background:white;
+      padding-left:10px;
+      font-size:16pt;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    .bn{
+      margin:4px 60px;
+      width:200px;
+      height:42px;
+      background:#79a8a9 no-repeat;
+      border:0;
+      display:block;
+      font-size:18px;
+      color:#FFF;
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight:bolder;
+    }
+  </style>
+</head>
+<script>
+  function t() {
+    if (document.ttt.userid.value == "" || document.ttt.userid.value == null) {
+      window.alert("账号不能为空")
+      return false;
+    }
+      if (document.msg.class.value == "" || document.msg.class.value == null) {
+        window.alert("账号不能为空")
+        return false;
+      }
+      if (document.msg.password.value == "" || document.msg.password.value == null) {
+        window.alert("密码不能为空")
+        return false;
+      }
+      if (document.msg.username.value == "" || document.msg.username.value == null) {
+        window.alert("姓名不能为空")
+        return false;
+      }
+      if (document.msg.usernum.value == "" || document.msg.usernum.value == null) {
+        window.alert("电话号码不能为空")
+        return false;
+      }
+      if (document.msg.xingbie.value == "" || document.msg.xingbie.value == null) {
+        window.alert("请输入性别")
+        return false;
+      }
+
+  }
+
+
+</script>
+<body>
+<div id="words">
+  <h1 style="size: 30px">学校账号管理</h1>
+</div>
+<div class='ribbon'>
+  <a href="home.html"><span>首页</span></a>
+  <a href="management.html"><span>老师账号注册</span></a>
+  <a href="student.html"><span>学生账号注册</span></a>
+  <a href="change.html"><span>修改账号信息</span></a>
+
+  <a href="delete.html"><span>删除账号</span></a>
+
+
+</div>
+<div class="dialog-bz">
+
+  <form  name="ttt" action="#" method="POST">
+
+    <div class="lg_main">
+      <div class="lg_m_1">
+        <input name="userid" type="text"  placeholder="请输入账号" class="ur" />
+        <input name="username" type="text"  placeholder="姓名" class="ur" />
+        <input name="class" type="text"  placeholder="班级" class="ur" />
+        <input name="xingbie" type="text" placeholder="性别" class="ur" />
+        <input name="usernum" type="text"  placeholder="请输入电话号码" class="ur" />
+        <input name="password" type="password" placeholder="请输入密码" class="pw" />
+
+        <input type="submit" value="提交" class="bn" onclick="return t()" /><br>
+        </div>
+    </div></form>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息</title>
+    <style>
+        body {
+            background: url(en3.jpg) no-repeat center center;
+            background-size: cover;
+            /* 让背景图基于容器大小伸缩 */
+            background-attachment: fixed;
+            /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 此条属性必须设置否则可能无效*/
+            background-color: #CCCCCC;
+            /* 设置背景颜色，背景图加载过程中会显示背景色 */
+        }
+        .ribbon {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            right: 300px;
+            top: 50px;
+            margin: auto;
+        }
+
+        .ribbon:after,
+        .ribbon:before {
+            margin-top: 0.5em;
+            content: "";
+            display: flex;
+        ;
+            border: 1.5em solid #fff;
+        }
+
+        .ribbon:after {
+            border-right-color: transparent;
+        }
+
+        .ribbon:before {
+            border-left-color: transparent;
+        }
+
+        .ribbon a:link,
+        .ribbon a:visited {
+            color: #000;
+            text-decoration: none;
+            height: 3.5em;
+            overflow: hidden;
+        }
+
+        .ribbon span {
+            background: #fff;
+            display: inline-block;
+            line-height: 3em;
+            padding: 0 1.5em;
+            margin-top: 0.5em;
+            position: relative;
+            -webkit-transition: background-color 0.2s, margin-top 0.2s;
+            /* Saf3.2+, Chrome */
+            -moz-transition: background-color 0.2s, margin-top 0.2s;
+            /* FF4+ */
+            -ms-transition: background-color 0.2s, margin-top 0.2s;
+            /* IE10 */
+            -o-transition: background-color 0.2s, margin-top 0.2s;
+            /* Opera 10.5+ */
+            transition: background-color 0.2s, margin-top 0.2s;
+        }
+
+        .ribbon a:hover span {
+            background: #FFD204;
+            margin-top: 0;
+        }
+
+        .ribbon span:before {
+            content: "";
+            position: absolute;
+            top: 3em;
+            left: 0;
+            border-right: 0.5em solid #9B8651;
+            border-bottom: 0.5em solid #fff;
+        }
+
+        .ribbon span:after {
+            content: "";
+            position: absolute;
+            top: 3em;
+            right: 0;
+            border-left: 0.5em solid #9B8651;
+            border-bottom: 0.5em solid #fff;
+        }
+
+
+        #left {
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;;
+            color: #f4f7f7;
+            height: 800px;
+            width: 550px;
+            float: left;
+            margin-top: 25px;
+        }
+
+        #words {
+            color: bisque;
+            font-family: NSimSun;
+            /*font-family: FZShouJinShu-S10S;*/
+        }
+
+        #right {
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;;
+            height: 800px;
+            width: 950px;
+            float: right;
+            margin-top: 25px;
+        }
+
+        footer {
+            background-color: #1f4e5f;
+            color: #f4f7f7;
+            clear: both;
+            text-align: center;
+        }
+
+        #picture1 {
+            float: left;
+            height: 400px;
+            width: 950px;
+        }
+        pictue {
+            height: 390px;
+            width: 945px;
+            float: right;
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+        }
+
+        #picture {
+            height: 390px;
+            width: 945px;
+            float: right;
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+        }
+
+        #msg {
+            float: right;
+            color: white;
+            /*font-family: NSimSun;*/
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+            text-align: center;
+            width: 370px;
+            height: 397px;
+            padding-top: 5px;
+        }
+
+        img {
+            float: left;
+            width: 510px;
+            height: 320px;
+            margin-top: 50px;
+        }
+
+        nav {
+            display: block;
+            padding: 10px 10px;
+            padding-top: 0;
+            margin-left: 300px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+
+
+        li {
+            float: left;
+        }
+        div.dialog-bz {
+            width: 550px;
+            height: 300px;
+            margin: auto;
+            margin-top: 200px;
+            background:url(http://keleyi.com/keleyi/phtml/divcss/21/images/login_bg.png) no-repeat;
+            padding: 50px 50px 30px;
+            box-shadow: 10px 10px 15px black;
+            text-align: center;
+
+        }
+
+
+
+        .dialog-bz-btn {
+            text-decoration: none;
+            font-size: larger;
+            color: #1f4e5f;
+        }
+
+        h2 {
+            font-family: Courier New;
+            color: ghostwhite;
+        }
+
+        #start {
+            width: 40px;
+            height: 40px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="words">
+    <h1 style="size: 30px">信息</h1>
+</div>
+<div class='ribbon'>
+    <a href="home.html"><span>首页</span></a>
+    <a href="message.html"><span>信息咨询</span></a>
+    <a href="management.html"><span>账号管理</span></a>
+    <a href="control.html"><span>班级管理</span></a>
+    <a href="information.html"><span>网站信息</span></a>
+
+
+</div>
+<div class="dialog-bz">
+  <h2>近日，由人力资源部教师发展中心主办的学校首期青年教师骨干教学能力提升研修班举行结业典礼。研修班教师学员，研修班指导专家高正平教授、姜书艳教授、吴援明教授、谢兴盛教授、邓淑华教授以及相关职能部门负责人出席。首届四川省高校教师教学创新大赛一等奖获奖者廖勇教授以“志趣驱动的跨学科挑战性项目课程模式探索”为题作专题报告。结业典礼由人力资源部教师发展中心主任罗小蓉教授主持。
+
+  </h2>
+
+
+</div>
+</body>
+</html>
