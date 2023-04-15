@@ -1,1 +1,2 @@
 This is my first small server built using SpringBoot. I only spent a week learning and developing it, so a lot of the code is not standardized. Although simple, it should be enough for me to get familiar with SpringBoot initially.The functions of several web pages have not been implemented yet, because I have not figured out some front-end knowledge.
+The code for the app part of the project is here
